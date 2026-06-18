@@ -70,9 +70,15 @@ def run_demo() -> int:
     Should mirror `tests/test_demo_scenario.py::TestEndToEndScenario::test_full_lifecycle`
     and print a human-readable summary to stdout.
     """
-    # TODO Day 4
-    raise NotImplementedError("Day 4: implement run_demo")
+    parser = argparse.ArgumentParser(prog="billing")
+sub = parser.add_subparsers(dest="cmd", required=True)
+
+sub.add_parser("init")
+plan_cmd = sub.add_parser("plan")
+plan_sub = plan_cmd.add_subparsers(dest="plan_subcmd", required=True)
+plan_sub.add_parser("list")
+raise NotImplementedError("Day 4: implement run_demo")
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+  raise SystemExit(main())

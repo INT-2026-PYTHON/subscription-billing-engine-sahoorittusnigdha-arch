@@ -352,10 +352,14 @@ class SubscriptionRepository:
             )
 
     def update_plan(self, subscription_id: int, new_plan_id: int) -> None:
-        # TODO Day 4.
-        # Hint: q.update_subscription_plan(...)
-        raise NotImplementedError("Day 4: implement SubscriptionRepository.update_plan")
-
+        
+       with self.db.transaction() as conn:
+        pr = compute_proration(...)
+        invoice = self.invoice_repo.add(Invoice(...))
+        self.line_item_repo.add(InvoiceLineItem(..., kind=LineItemKind.PRORATION_CREDIT))
+        self.line_item_repo.add(InvoiceLineItem(..., kind=LineItemKind.PRORATION_CHARGE))
+        self.ledger_repo.add(LedgerEntry(..., direction=LedgerDirection.DEBIT))
+        self.subscription_repo.update_plan(subscription_id, new_plan_id)
 
 # ============================================================
 # USAGE
