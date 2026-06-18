@@ -19,7 +19,6 @@ on a proration credit/charge is just `tax_calc.apply(credit_or_charge)`.
 The two legs are returned as TAX-INCLUSIVE Money values for the
 PRORATION_CREDIT (negative) and PRORATION_CHARGE (positive) line items.
 """
-
 from __future__ import annotations
 
 from dataclasses import dataclass

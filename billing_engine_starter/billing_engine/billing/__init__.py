@@ -1,4 +1,5 @@
 """Billing workflow — pipeline, cycle, dunning, proration."""
+"""Billing workflow — pipeline, cycle, dunning, proration."""
 from .pipeline import build_invoice
 from .cycle import BillingCycle
 from .dunning import DunningProcess, DunningState

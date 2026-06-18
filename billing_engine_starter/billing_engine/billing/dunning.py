@@ -17,7 +17,6 @@ After the subscription has been PAST_DUE for 7 days with no recovery,
 the BillingCycle.run (Day 2 work) may flip it to CANCELLED — that
 transition does NOT live in this file.
 """
-
 from __future__ import annotations
 
 from dataclasses import dataclass
@@ -74,10 +73,3 @@ class DunningProcess:
         """Try once. Record the attempt. Return the resulting outcome."""
         # TODO Day 4
         raise NotImplementedError("Day 4: implement DunningProcess.attempt")
-
-    # --------------------------------------------------------
-    @staticmethod
-    def should_cancel(past_due_since: date, today: date, grace_days: int = 7) -> bool:
-        """Helper used by BillingCycle to decide PAST_DUE → CANCELLED."""
-        # TODO Day 4
-        raise NotImplementedError("Day 4: implement DunningProcess.should_cancel")
